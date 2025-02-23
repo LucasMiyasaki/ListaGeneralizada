@@ -1,3 +1,5 @@
+import java.util.Stack;
+
 public class ListaGen {
   private No inicio;
 
@@ -15,10 +17,38 @@ public class ListaGen {
 
   public void gerarLista(String string) {
     // “[aaa, [bbb, ccc], ddd, [eee, [ ], fff]]”
-    string.replace(" ", "");
+    string = string.replace(" ", "");
+
+    No pos = this.inicio;
+    Stack<No> pilha = new Stack();
 
     for(int i=0; i<string.length(); i++) {
-      
+      if(string.charAt(i) == '[') {
+        if(this.inicio == null) {
+          No novoNo = new No();
+          this.inicio = novoNo;
+          pos = this.inicio;
+        } else {
+          pilha.add(pos);
+
+          pos.insereNo(pos.getCabeca());
+          pos = (No)pos.getCabeca();
+        }
+      } else if(string.charAt(i) == ',') {
+        pos.insereNo(pos.getCauda());
+        pos = pos.getCauda();
+      } else if(string.charAt(i) == ']') {
+        pos = pilha.pop();
+      } else {
+        String atomo = "";
+
+        while(string.charAt(i) != '[' && string.charAt(i) != ',' && string.charAt(i) != ']') {
+          atomo += string.charAt(i);
+          i++;
+        }
+
+        pos.insereAtomo(atomo);
+      }
     }
   }
 }

@@ -1,5 +1,9 @@
 public class Main {
    public static void main(String[] args) {
-      System.out.println("Hello world!");
+      ListaGen lista = new ListaGen();
+
+      lista.gerarLista("[aaa, [bbb, ccc], ddd, [eee, [ ], fff]]");
+
+      
    }
 }
