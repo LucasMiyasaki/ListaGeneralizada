@@ -23,12 +23,6 @@ public class No extends Elemento{
     this.cauda = cauda;
   }
 
-  public void insereNo(Elemento elemento) {
-    No novoNo = new No();
-
-    elemento = novoNo;
-  }
-
   public void insereAtomo(String info) {
     Atomo novoAtomo = new Atomo(info);
 

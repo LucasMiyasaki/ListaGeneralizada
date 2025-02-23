@@ -28,17 +28,25 @@ public class ListaGen {
           No novoNo = new No();
           this.inicio = novoNo;
           pos = this.inicio;
-        } else {
-          pilha.add(pos);
 
-          pos.insereNo(pos.getCabeca());
-          pos = (No)pos.getCabeca();
+        } else {
+          if(string.charAt(i+1) != ']') {
+            pilha.add(pos);
+
+            No novoNo = new No();
+            pos.setCabeca(novoNo);
+            pos = (No)pos.getCabeca();
+          }
         }
       } else if(string.charAt(i) == ',') {
-        pos.insereNo(pos.getCauda());
+        No novoNo = new No();
+        pos.setCauda(novoNo);
         pos = pos.getCauda();
+
       } else if(string.charAt(i) == ']') {
-        pos = pilha.pop();
+        if(pilha.size() != 0)
+          pos = pilha.pop();
+
       } else {
         String atomo = "";
 
@@ -46,6 +54,7 @@ public class ListaGen {
           atomo += string.charAt(i);
           i++;
         }
+        i--;
 
         pos.insereAtomo(atomo);
       }

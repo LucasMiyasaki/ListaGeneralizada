@@ -3,7 +3,5 @@ public class Main {
       ListaGen lista = new ListaGen();
 
       lista.gerarLista("[aaa, [bbb, ccc], ddd, [eee, [ ], fff]]");
-
-      
    }
 }
