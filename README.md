@@ -1,7 +1,7 @@
 # Projeto: Implementação de Lista Generalizada em Java
 
 ## Descrição
-Este projeto implementa uma estrutura de dados de **Lista Generalizada** (LG) em Java. A lista generalizada permite armazenar tanto **átomos** (valores simples) quanto **outras listas**, criando uma estrutura aninhada.
+Este projeto implementa uma estrutura de dados de **Lista Generalizada** (LG) em Java. A lista generalizada permite armazenar tanto **átomos** (valores simples) quanto **outras listas**, criando uma estrutura aninhada. (Projeto ainda em andamento)
 
 Exemplo de lista generalizada: `[aaa, [bbb, ccc], ddd, [eee, [ ], fff]]`
 
